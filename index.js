@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 
 const db = require('./data/db.js');
 
@@ -6,6 +7,7 @@ const server = express();
 const PORT = '9090';
 
 server.use(express.json());
+server.use(cors());
 
 server.get('/api/users', (req, res) => {
    // will send back a status of 200 automatically

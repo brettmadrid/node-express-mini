@@ -1,0 +1,13 @@
+.App {
+  background-color: lightseagreen;
+}
+
+.hobbit-container {
+  display: flex;
+}
+
+.hobbits {
+  border: .5px solid rgb(31, 26, 26);
+  width: 33%;
+  margin: 2%;
+}
