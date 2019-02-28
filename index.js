@@ -54,20 +54,19 @@ server.delete('/api/users/:id', (req, res) => {
 })
 
 server.post('/api/users', (req, res) => {
-  const newUser = req.body
+  const newUser = req.body;
 
   db.insert(newUser)
   .then(user => {
-    if(newUser.name && newUser.bio){
-      res.status(201).json(user)
-    }
-    else{
-      res.status(400).json({ errorMessage: "Please provide name and bio for the user." });
+    if(newUser.name && newUser.bio) {
+    res.status(201).json(user);
+    } else {
+      res.status(400).json({err: "Please provide name and bio for the user"})
     }
   })
   .catch(err => {
     res.status(500).json({ error: "There was an error while saving the user to the database" });
-  }); 
+  });
 })
 
 server.listen(PORT, () => {
